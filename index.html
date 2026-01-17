@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Word Count Hero – Free Word Counter Tool</title>
-<meta name="description" content="Word Count Hero is a free online word counter that instantly counts words, characters, sentences, and reading time.">
-<link rel="icon" href="favicon.png">
+<meta name="description" content="Word Count Hero is a free online word counter that instantly counts words, characters, sentences, and reading time." />
+<link rel="icon" href="/favicon.png" />
+<link rel="stylesheet" href="/styles.css" />
 
 <script type="application/ld+json">
 {
@@ -17,78 +18,62 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
-
-<style>
-body{margin:0;font-family:system-ui;background:#faf6f2;color:#2b2b2b}
-header{background:#fff;border-bottom:1px solid #eee;padding:16px}
-nav{max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
-nav a{text-decoration:none;color:#2b2b2b;font-weight:500}
-nav a:hover{color:#DE7356}
-.logo{font-weight:800;color:#DE7356;font-size:22px}
-main{max-width:1100px;margin:40px auto;padding:0 20px}
-.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
-textarea{width:100%;min-height:220px;padding:16px;border-radius:12px;border:1px solid #ddd;font-size:16px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:16px}
-.stat{background:#faf6f2;border-radius:12px;padding:16px;text-align:center}
-.stat span{display:block;font-size:26px;font-weight:800;color:#DE7356}
-footer{text-align:center;padding:40px;color:#777}
-</style>
 </head>
 
 <body>
 <header>
-<nav>
-<div class="logo">Word Count Hero</div>
-<div>
-<a href="/">Tool</a>
-<a href="/writing-tips.html">Writing Tips</a>
-<a href="/how-it-works.html">How It Works</a>
-<a href="/guides/word-count-guide.html">Guides</a>
-<a href="/privacy.html">Privacy</a>
-</div>
-</nav>
+  <nav>
+    <div class="logo">Word Count Hero</div>
+    <div class="nav-links">
+      <a href="/">Tool</a>
+      <a href="/writing-tips.html">Writing Tips</a>
+      <a href="/how-it-works.html">How It Works</a>
+      <a href="/guides/word-count-guide.html">Guides</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
 </header>
 
 <main>
-<h1>Free Word Counter Tool</h1>
+  <h1>Free Word Counter Tool</h1>
 
-<div class="card">
-<textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+  <div class="card">
+    <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
 
-<div class="stats">
-<div class="stat">Words<span id="words">0</span></div>
-<div class="stat">Characters<span id="chars">0</span></div>
-<div class="stat">No Spaces<span id="nospace">0</span></div>
-<div class="stat">Sentences<span id="sentences">0</span></div>
-<div class="stat">Reading Time<span id="read">0 min</span></div>
-</div>
-</div>
+    <div class="stats">
+      <div class="stat">Words<span id="words">0</span></div>
+      <div class="stat">Characters<span id="chars">0</span></div>
+      <div class="stat">No Spaces<span id="nospace">0</span></div>
+      <div class="stat">Sentences<span id="sentences">0</span></div>
+      <div class="stat">Reading Time<span id="read">0 min</span></div>
+    </div>
+  </div>
 
-<section class="card" style="margin-top:40px">
-<h2>What Is Word Count Hero?</h2>
-<p>Word Count Hero is a free online writing tool designed for students, writers, bloggers, marketers, and professionals who need accurate word counts instantly. Unlike basic counters, this tool tracks words, characters with and without spaces, sentences, paragraphs, and estimated reading time in real time.</p>
+  <section class="card" style="margin-top:40px">
+    <h2>What Is Word Count Hero?</h2>
+    <p>Word Count Hero is a free online writing tool designed for students, writers, bloggers, marketers, and professionals who need accurate word counts instantly. Unlike basic counters, this tool tracks words, characters with and without spaces, sentences, paragraphs, and estimated reading time in real time.</p>
 
-<p>Whether you're writing an essay, blog post, academic paper, or marketing copy, Word Count Hero helps you stay within limits and improve clarity.</p>
-</section>
+    <p>Whether you're writing an essay, blog post, academic paper, or marketing copy, Word Count Hero helps you stay within limits and improve clarity.</p>
+  </section>
 </main>
 
 <footer>© 2026 Word Count Hero</footer>
 
 <script>
-const t=document.getElementById("textInput");
-const w=document.getElementById("words");
-const c=document.getElementById("chars");
-const n=document.getElementById("nospace");
-const s=document.getElementById("sentences");
-const r=document.getElementById("read");
+const t = document.getElementById("textInput");
+const w = document.getElementById("words");
+const c = document.getElementById("chars");
+const n = document.getElementById("nospace");
+const s = document.getElementById("sentences");
+const r = document.getElementById("read");
 
-t.addEventListener("input",()=>{
-const text=t.value;
-w.textContent=text.trim()?text.trim().split(/\s+/).length:0;
-c.textContent=text.length;
-n.textContent=text.replace(/\s+/g,"").length;
-s.textContent=text.split(/[.!?]+/).filter(Boolean).length;
-r.textContent=Math.max(1,Math.ceil(w.textContent/200))+" min";
+t.addEventListener("input", () => {
+  const text = t.value;
+  w.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
+  c.textContent = text.length;
+  n.textContent = text.replace(/\s+/g, "").length;
+  s.textContent = text.split(/[.!?]+/).filter(Boolean).length;
+  r.textContent = Math.max(1, Math.ceil(w.textContent / 200)) + " min";
 });
 </script>
 </body>
