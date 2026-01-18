@@ -60,9 +60,10 @@ textarea {
   border: 1px solid #ddd;
   font-size: 16px;
   font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  resize: vertical;
 }
 
-/* Placeholder text style to match textarea font */
 textarea::placeholder {
   font-family: system-ui, sans-serif;
   font-weight: normal;
